@@ -1,0 +1,68 @@
+.ControlForm {
+    top: 0;
+    display: inline-block;
+    background-color: white;
+    & > div {
+        padding: 5px;
+    }
+    .error-message {
+        color: red;
+        font-style: italic;
+    }
+    .config-pane {
+        min-width: 400px;
+        display:inline-flex;
+        flex-direction: column;
+        & > div {
+            display: inline-flex;
+            padding: 5px;
+            .form-label {
+                flex-basis: 70px;
+                margin-right: 5px;
+                text-align: right;
+                font-weight: bold;
+            }
+            .form-input {
+                flex:1;
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .action-pane {
+        background: white;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        .action-queue {
+            flex: 1;
+            display: table;
+            //display: flex;
+            //flex-direction: column;
+            & > div {
+                display: table-row;
+                & > div {
+                    display: table-cell;
+                    padding: 5px 0;
+                    border: 1px solid #eee;
+                    border-left:none;
+                    border-right:none;
+                    cursor: default;
+                }
+            }
+            .tr {
+                text-align: right;
+            }
+            .selected {
+                color: blue;
+            }
+            .done {
+                background-color: #c4f7c4;
+            }
+        }
+    }
+}

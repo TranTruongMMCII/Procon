@@ -1,0 +1,52 @@
+.Tile {
+	position: relative;
+	text-align: center;
+	display: table-cell;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	cursor: default;
+	&.blue {
+		background-color: lightblue;
+	}
+	&.red {
+		background-color: pink;
+	}
+	&.treasure {
+		&::after {
+			content: "";
+			background-image: url("./treasure.png");
+			background-size: contain;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 24px;
+			height: 24px;
+		}
+		.treasure-point {
+			position: absolute;
+			left: 24px;
+			top: 6px;
+			line-height: 1em;
+			font-size: 0.75em;
+		}
+		&.claimed {
+			&::after,
+			.treasure-point {
+				opacity: 0.3;
+			}
+		}
+	}
+	&.wall {
+		background-image: url("./wall.png");
+		background-size: contain;
+	}
+	&.agent {
+		border: 2px solid #888;
+	}
+	&.blue.agent.selected {
+		border-color: navy;
+	}
+	&.red.agent.selected {
+		border-color: red;
+	}
+}

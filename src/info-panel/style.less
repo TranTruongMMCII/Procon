@@ -1,0 +1,28 @@
+.InfoPanel {
+    display:inline-block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width:300px;
+    vertical-align: top;
+    margin-left: 12px;
+    .team {
+        display:flex;
+        border: 1px solid #eee;
+        & > div {
+            display:block;
+            flex: 1;
+        }
+    }
+    .time {
+        font-size: 120%;
+        color: red;
+        animation-name: blink;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+}
+@keyframes blink {
+    from { color: red; }
+    to { color: white; }
+}
